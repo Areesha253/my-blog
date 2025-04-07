@@ -1,0 +1,135 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+.back-btn-with-icon {
+  text-decoration: none;
+  font-size: functions.rem(16);
+  font-weight: 600;
+  border: 2px solid #555b61;
+  padding: functions.rem(10) functions.rem(15);
+  border-radius: 5px;
+  color: #f8f9fa;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: #3478c2;
+    border: 2px solid #3478c2;
+  }
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 30px;
+  color: #fff;
+  background: #1c1f23;
+  box-shadow: 0px 0px 15px rgba(74, 144, 226, 0.4);
+  border-radius: 10px;
+
+  h3 {
+    font-size: functions.rem(24);
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    label {
+      font-size: functions.rem(14);
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #555b61;
+      background-color: transparent;
+      border-radius: 5px;
+      font-size: functions.rem(14);
+      transition: all 0.3s ease;
+      color: #ffffff;
+
+      &:focus {
+        outline: none;
+        border-color: #3478c2;
+        box-shadow: 0px 0px 8px rgba(#3478c2, 0.3);
+      }
+      &::placeholder {
+        color: #a6acb3;
+      }
+    }
+
+    .login-register-btn {
+      padding: 12px;
+      background: #3478c2;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: functions.rem(16);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #2b65a3;
+      }
+    }
+  }
+
+  .register-link {
+    text-align: center;
+    margin-top: functions.rem(14);
+    font-weight: 600;
+
+    p {
+      font-size: functions.rem(14);
+      color: #ffffff;
+    }
+
+    a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        text-decoration: underline #0056b3;
+      }
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  .back-btn-with-icon {
+    font-size: functions.rem(14);
+  }
+  .login-box {
+    h3 {
+      font-size: functions.rem(18);
+    }
+    .login-register-btn {
+      font-size: functions.rem(14);
+    }
+  }
+}

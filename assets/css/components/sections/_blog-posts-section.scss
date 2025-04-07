@@ -1,0 +1,68 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+.blog-posts-section {
+  .post-head {
+    text-decoration: none;
+    color: #212529;
+    .post-title {
+      font-size: functions.rem(36);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .post-subtitle {
+      text-decoration: none;
+      font-size: functions.rem(28);
+      font-weight: 300;
+    }
+    &:hover {
+      color: #0085a1;
+    }
+  }
+  .post-meta {
+    font-family: "Lora", serif;
+    font-size: functions.rem(18);
+    color: #6c757d;
+    font-weight: 400;
+    font-style: italic;
+
+    .post-author {
+      color: #212529;
+      text-decoration: none;
+      &:hover {
+        color: #0085a1;
+      }
+    }
+  }
+}
+@include mixins.responsive("md-devices") {
+  .blog-posts-section {
+    .post-head {
+      .post-title {
+        font-size: functions.rem(30);
+      }
+      .post-subtitle {
+        font-size: functions.rem(23);
+      }
+    }
+  }
+  .post-meta {
+    font-size: functions.rem(18);
+  }
+}
+@include mixins.responsive("sm-devices") {
+  .blog-posts-section {
+    .post-head {
+      .post-title {
+        font-size: functions.rem(20);
+      }
+      .post-subtitle {
+        font-size: functions.rem(16);
+      }
+    }
+  }
+  .post-meta {
+    font-size: functions.rem(14);
+  }
+}

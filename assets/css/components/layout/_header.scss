@@ -1,0 +1,129 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+.my-navbar {
+  padding-top: 10px;
+  color: #fff;
+  .navbar-ul {
+    align-items: center;
+  }
+  .navbar-logo {
+    font-weight: 800;
+    font-size: functions.rem(20);
+    color: inherit;
+  }
+  .navbar-link {
+    font-weight: 800;
+    color: inherit;
+    font-size: functions.rem(12);
+    text-decoration: none;
+    padding: 0 functions.rem(24);
+  }
+  .username-with-user-icon {
+    display: flex;
+    cursor: pointer;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 24px;
+    position: relative;
+    .logged-in-username {
+      font-weight: 800;
+      color: inherit;
+      font-size: functions.rem(12);
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    .user-dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: auto;
+      background: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      padding: 8px 10px;
+      z-index: 100;
+      &.show-dropdown {
+        display: flex;
+      }
+      .user-dropdown-item {
+        text-decoration: none;
+        font-size: functions.rem(14);
+        font-weight: 400;
+        text-decoration: none;
+        color: #212529;
+        font-weight: 600;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background: #f4f4f8;
+        }
+      }
+    }
+  }
+  &.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+}
+.username-with-icon-dashboard {
+  font-size: functions.rem(14);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+@include mixins.responsive("lg-devices") {
+  .my-navbar {
+    .navbar-ul {
+      gap: 16px;
+    }
+    .navbar-link {
+      padding: 0 functions.rem(18);
+    }
+  }
+}
+@include mixins.responsive("md-devices") {
+  .my-navbar {
+    border-bottom: 1px solid #dee2e6;
+    background: #fff;
+    .navbar-logo {
+      color: #212529;
+      font-size: functions.rem(18);
+    }
+    .username-with-user-icon-sm {
+      color: #212529;
+      .logged-in-username {
+        font-size: functions.rem(14);
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    }
+    .navbar-menu-burger {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 12px;
+      border: 1px solid #0000001a;
+      border-radius: 0;
+    }
+    .navbar-ul {
+      color: #0000008c;
+      align-items: flex-start;
+      .username-with-user-icon {
+        padding: 0;
+      }
+      .search-form {
+        display: none;
+      }
+    }
+    .navbar-link {
+      padding: 0;
+    }
+  }
+}

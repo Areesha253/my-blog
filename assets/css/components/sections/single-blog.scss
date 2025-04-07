@@ -1,0 +1,96 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+.single-blog {
+  text-align: start;
+  .main-heading {
+    font-size: functions.rem(56);
+    font-weight: 800;
+  }
+  .sub-heading {
+    font-size: functions.rem(30);
+    font-weight: 600;
+  }
+  .author-text {
+    font-size: functions.rem(20);
+    font-weight: 300;
+    font-style: italic;
+    font-family: "Lora", serif;
+  }
+}
+.article {
+  .content-body {
+    text-align: start;
+    .post-body {
+      h2 {
+        font-size: functions.rem(36);
+      }
+      p {
+        text-align: start;
+        margin: functions.rem(32) 0;
+        font-size: functions.rem(20);
+        font-weight: 400;
+        color: #212529;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+@include mixins.responsive("md-devices") {
+  .single-blog {
+    text-align: start;
+    .main-heading {
+      font-size: functions.rem(36);
+      font-weight: 800;
+    }
+    .sub-heading {
+      font-size: functions.rem(24);
+      font-weight: 600;
+    }
+    .author-text {
+      font-size: functions.rem(20);
+    }
+  }
+  .article {
+    .content-body {
+      .post-body {
+        h2 {
+          font-size: functions.rem(36);
+        }
+        p {
+          font-size: functions.rem(14);
+        }
+      }
+    }
+  }
+}
+@include mixins.responsive("sm-devices") {
+  .single-blog {
+    text-align: start;
+    .main-heading {
+      font-size: functions.rem(24);
+    }
+    .sub-heading {
+      font-size: functions.rem(18);
+    }
+    .author-text {
+      font-size: functions.rem(14);
+    }
+  }
+  .article {
+    .content-body {
+      .post-body {
+        h2 {
+          font-size: functions.rem(18);
+        }
+        p {
+          font-size: functions.rem(14);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+.hero-section {
+  position: relative;
+  padding: 16rem 0;
+  background: url("../img/home-bg.jpg") no-repeat center center/cover;
+  margin-bottom: 3rem;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.5;
+  }
+}
+.hero-section-wrapper {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  .main-heading {
+    font-weight: 900;
+    font-size: functions.rem(80);
+  }
+  .sub-heading {
+    font-size: functions.rem(24);
+    font-weight: 300;
+  }
+}
+@include mixins.responsive("md-devices") {
+  .hero-section-wrapper {
+    .main-heading {
+      font-size: functions.rem(48);
+    }
+    .search-text {
+      font-size: functions.rem(32);
+    }
+    .sub-heading {
+      font-size: functions.rem(24);
+    }
+  }
+}
+@include mixins.responsive("sm-devices") {
+  .hero-section-wrapper {
+    .main-heading {
+      font-size: functions.rem(34);
+    }
+    .sub-heading {
+      font-size: functions.rem(16);
+    }
+  }
+}
