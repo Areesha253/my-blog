@@ -5,7 +5,7 @@ session_start();
 header('Content-Type: application/json; charset=utf-8');
 function sanitize_input($conn, $data)
 {
-    return mysqli_real_escape_string($conn, trim($data));
+    return mysqli_real_escape_string($conn, htmlspecialchars(stripslashes(trim($data))));
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
