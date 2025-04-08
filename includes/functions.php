@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $content = trim($_POST['content'] ?? '');
         $created_by = $_SESSION['username'] ?? null;
 
-        if (empty($title) || empty($author) || empty($content) || !$created_by) {
+        if (empty($title) || empty($subtitle) || empty($author) || empty($content) || !$created_by) {
             echo json_encode(["status" => "error", "message" => "All required fields must be filled."]);
             exit();
         }

@@ -37,7 +37,7 @@ if (!isset($_SESSION['username'])) {
 
                     <div class="form-group">
                         <label for="subtitle">Subtitle</label>
-                        <input type="text" id="subtitle" name="subtitle">
+                        <input type="text" id="subtitle" name="subtitle" required>
                     </div>
 
                     <div class="form-group">
@@ -47,7 +47,7 @@ if (!isset($_SESSION['username'])) {
 
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea id="content" name="content" rows="8"></textarea>
+                        <textarea id="content" name="content" rows="8" required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn action-btn create-blog-btn">Publish Blog</button>
